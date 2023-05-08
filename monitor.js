@@ -1,4 +1,8 @@
 const divRelogio=document.getElementById("relogio");
+const minutos = 1000 * 60;
+const hora = minutos * 60;
+const dia = hora * 24;
+const ano = dia * 365;
 var doisPontos=":";
 function tiqueRelogio() {
 	if (doisPontos==":") {
@@ -6,7 +10,9 @@ function tiqueRelogio() {
 	} else {
 		doisPontos=":";
 	}
-	divRelogio.innerHTML="20"+doisPontos+"14";
+	let horasAtual = Math.round(Date.now() / hora);
+	let minutosAtual = Math.round(Date.now() / minutos);
+	divRelogio.innerHTML=horasAtual.toString().padStart(2,"0")+doisPontos+minutosAtual.toString().padStart(2,"0");
 	console.log("FOI!");
 }
 setInterval(tiqueRelogio,500);
