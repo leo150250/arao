@@ -7,7 +7,9 @@
 </head>
 <body>
 <div id="relogio">
-20:14
+00:00
+</div>
+<div id="oracoes">
 </div>
 <div id="alerta">
 </div>
